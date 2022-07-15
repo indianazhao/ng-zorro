@@ -11,8 +11,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AgGridModule } from 'ag-grid-angular';
+
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzCardModule } from 'ng-zorro-antd/card';
+
 
 registerLocaleData(en);
 
@@ -27,8 +33,13 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
 
+    AgGridModule,
+
     NzButtonModule,
     NzPopoverModule,
+    NzGridModule,
+    NzSpaceModule,
+    NzCardModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
