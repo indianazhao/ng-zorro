@@ -19,13 +19,17 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDemoSelectScrollLoadComponent } from './components/nz-demo-select-scroll-load/nz-demo-select-scroll-load.component';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NzDemoSelectScrollLoadComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,8 @@ registerLocaleData(en);
     NzGridModule,
     NzSpaceModule,
     NzCardModule,
+    NzSelectModule,
+    NzSpinModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
