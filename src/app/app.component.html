@@ -22,6 +22,12 @@
                        class="ag-theme-alpine"
                        [gridOptions]="options">
       </ag-grid-angular>
+      <nz-collapse>
+        <nz-collapse-panel nzHeader="Grid rowData"
+                           [nzActive]="true">
+          <pre>{{ options.rowData | json }}</pre>
+        </nz-collapse-panel>
+      </nz-collapse>
     </nz-card>
   </nz-space>
 </div>

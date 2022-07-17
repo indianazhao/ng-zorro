@@ -1,3 +1,4 @@
+import { NzDemoSelectScrollLoadComponent } from './components/nz-demo-select-scroll-load/nz-demo-select-scroll-load.component';
 import { Component } from '@angular/core';
 import { ColDef, GridOptions } from 'ag-grid-community';
 import { DataService } from './service/data.service';
@@ -43,14 +44,15 @@ export class AppComponent {
         //   };
         // },
       },
-      { field: 'price' }
+      { field: 'driver', editable: true, cellEditor: NzDemoSelectScrollLoadComponent, },
+      { field: 'price' },
     ],
 
     rowData: [
-      { make: 'Toyota', model: 'Celica', price: 35000 },
-      { make: 'Toyota', model: 'Altis', price: 30000 },
-      { make: 'Ford', model: 'Mondeo', price: 32000 },
-      { make: 'Porsche', model: 'Boxster', price: 72000 }
+      { make: 'Toyota', model: 'Celica', driver: '', price: 35000 },
+      { make: 'Toyota', model: 'Altis', driver: '', price: 30000 },
+      { make: 'Ford', model: 'Mondeo', driver: '', price: 32000 },
+      { make: 'Porsche', model: 'Boxster', driver: '', price: 72000 }
     ],
 
     defaultColDef: {

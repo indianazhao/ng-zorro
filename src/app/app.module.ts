@@ -22,7 +22,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDemoSelectScrollLoadComponent } from './components/nz-demo-select-scroll-load/nz-demo-select-scroll-load.component';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
-
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 registerLocaleData(en);
 
@@ -47,6 +47,7 @@ registerLocaleData(en);
     NzCardModule,
     NzSelectModule,
     NzSpinModule,
+    NzCollapseModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
