@@ -1,8 +1,10 @@
 import { NzDemoSelectScrollLoadComponent } from './components/nz-demo-select-scroll-load/nz-demo-select-scroll-load.component';
 import { Component } from '@angular/core';
-import { ColDef, GridOptions } from 'ag-grid-community';
+import { ColDef, GridOptions, NewValueParams } from 'ag-grid-community';
 import { DataService } from './service/data.service';
 import { map } from 'rxjs/operators';
+import { TData } from './model/data';
+import { NzMessageService } from 'ng-zorro-antd/message';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -43,8 +45,19 @@ export class AppComponent {
         //     ],
         //   };
         // },
+
+        onCellValueChanged: (event: NewValueParams<TData>) => {
+          this.message.info(`model is updated from "${event.oldValue}" to "${event.newValue}"`);
+        },
       },
-      { field: 'driver', editable: true, cellEditor: NzDemoSelectScrollLoadComponent, },
+      {
+        field: 'driver',
+        editable: true,
+        cellEditor: NzDemoSelectScrollLoadComponent,
+        onCellValueChanged: (event: NewValueParams<TData>) => {
+          this.message.info(`driver is updated from "${event.oldValue}" to "${event.newValue}"`);
+        },
+      },
       { field: 'price' },
     ],
 
@@ -85,5 +98,8 @@ export class AppComponent {
     // },
   };
 
-  constructor(public data: DataService) { }
+  constructor(
+    public data: DataService,
+    private message: NzMessageService,
+  ) { }
 }
